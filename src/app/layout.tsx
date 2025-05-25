@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lusitana } from "next/font/google";
 import "./globals.css";
+
+export const lusitana = Lusitana({
+  variable: "--font-lusitana",
+  subsets: ['latin'],
+  weight: ['400', '700'], // según los pesos que necesites
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lusitana.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

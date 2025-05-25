@@ -1,4 +1,4 @@
-# vercel-course-nextjs15
+# Vercel Course Nextjs 15
 
 This is the official nextjs 15 + react 19 course from Vercel in 2025
 
@@ -7,3 +7,11 @@ This is the official nextjs 15 + react 19 course from Vercel in 2025
 - [Next.js 15 Documentation](https://nextjs.org/docs)
 - [React](https://react.dev/learn)
 - [Vercel](https://vercel.com/docs)
+
+### Packages manage
+
+> pnm run dev  -> pnpm dev - we don't need to use RUN anymore
+
+### Placeholder Data
+
+[mockapi](https://mockapi.io/)
