@@ -19,3 +19,7 @@ This is the official nextjs 15 + react 19 course from Vercel in 2025
 ### Project Structure
 
 [recommended by vercel](https://nextjs.org/docs/app/getting-started/project-structure#routing-files)
+
+### Vercel marketplace
+
+[docs](https://vercel.com/marketplace/category/databases?category=databases)
