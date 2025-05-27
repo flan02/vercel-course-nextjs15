@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lusitana } from "next/font/google";
 import "./globals.css";
 
-export const lusitana = Lusitana({
+const lusitana = Lusitana({
   variable: "--font-lusitana",
   subsets: ['latin'],
   weight: ['400', '700'], // según los pesos que necesites

@@ -1,4 +1,4 @@
-import { lusitana } from "@/app/layout";
+
 import type { Config } from "tailwindcss";
 
 export default {
