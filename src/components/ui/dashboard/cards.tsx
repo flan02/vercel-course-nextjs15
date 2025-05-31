@@ -1,3 +1,4 @@
+import { fetchCardData } from '@/lib/data';
 import {
   BanknotesIcon,
   ClockIcon,
@@ -14,18 +15,20 @@ const iconMap = {
 };
 
 export default async function CardWrapper() {
+  const dashboard = await fetchCardData(); // This is a constant that save all the data returned by the fetchCardData function. We use the dot notation to access the fc like these were properties of an object.
+
   return (
     <>
       {/* ! NOTE: Uncomment this code in Chapter 9 */}
 
-      {/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
-      <Card title="Pending" value={totalPendingInvoices} type="pending" />
-      <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+      <Card title="Collected" value={dashboard.totalPaidInvoices} type="collected" />
+      <Card title="Pending" value={dashboard.totalPendingInvoices} type="pending" />
+      <Card title="Total Invoices" value={dashboard.numberOfInvoices} type="invoices" />
       <Card
         title="Total Customers"
-        value={numberOfCustomers}
+        value={dashboard.numberOfCustomers}
         type="customers"
-      /> */}
+      />
     </>
   );
 }

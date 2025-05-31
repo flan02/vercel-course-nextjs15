@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/dashboard/cards';
 import RevenueChart from '@/components/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/components/ui/dashboard/latest-invoices';
-import { fetchCardData, fetchLatestInvoices, fetchRevenue } from './actions';
+import { fetchCardData, fetchLatestInvoices, fetchRevenue } from '../actions';
 
 // * This is a server component
 
@@ -66,6 +66,15 @@ export default async function DashboardPage() {
         Dashboard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* IN CASE WE WANT TO GROUP THESE COMPONENTS, WE NEED TO MOVE THE FETCHES FC DOWN TO <CARDWRAPPER/> COMPONENT */}
+        {/* THIS WRAPPER CREATES A STAGGERED EFFECT, BY STREAMING PAGE SECTIONS AND ENSURE THAT WE WILL LOAD IN THE DATA AT THE SAME TIME. */}
+        {/* 
+          <Suspense fallback={<CardsSkeleton />}>
+          <CardWrapper />  // 
+        </Suspense>
+        */}
+
+        {/* Streams each component UI individually */}
         <Card title="Collected" value={totalPaidInvoices} type="collected" />
         <Card title="Pending" value={totalPendingInvoices} type="pending" />
         <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
@@ -82,3 +91,49 @@ export default async function DashboardPage() {
     </main>
   );
 }
+
+
+// * When we implement react Suspense, we fetch the data in the component itself. In case this takes longer than expected we may isolate and show in the UI the data that is already available.
+/* 
+
+export default async function RevenueChart() {
+  
+  | revenue is fetched in the children component itself (<RevenueChart />), so we can use Suspense to show a loading state while the data is being fetched.
+  const latestInvoices = await fetchLatestInvoices();
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
+ 
+  return (
+    <main>
+      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+        Dashboard
+      </h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Card title="Collected" value={totalPaidInvoices} type="collected" />
+        <Card title="Pending" value={totalPendingInvoices} type="pending" />
+        <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+        <Card
+          title="Total Customers"
+          value={numberOfCustomers}
+          type="customers"
+        />
+      </div>
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+      | // Suspense is a React feature that allows you to wait for some code to load before rendering the component.
+        ? <Suspense fallback={<RevenueChartSkeleton />}>
+        ? <RevenueChart />
+        ? </Suspense>
+        <LatestInvoices latestInvoices={latestInvoices} />
+      </div>
+    </main>
+  );
+}
+
+
+*/
+
+
