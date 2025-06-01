@@ -55,6 +55,17 @@ export type InvoicesTable = {
   status: 'pending' | 'paid';
 };
 
+export type FormattedInvoicesTable = {
+  id: string;
+  customer_id: string;
+  name: string;
+  email: string;
+  image_url: string;
+  date: string;
+  amount: string; // formatted as currency
+  status: 'pending' | 'paid';
+};
+
 export type CustomersTableType = {
   id: string;
   name: string;
@@ -82,7 +93,7 @@ export type CustomerField = {
 
 export type InvoiceForm = {
   id: string;
-  customer_id: string;
+  customerId: string;
   amount: number;
   status: 'pending' | 'paid';
 };

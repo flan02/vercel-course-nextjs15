@@ -27,3 +27,15 @@ This is the official nextjs 15 + react 19 course from Vercel in 2025
 ### PARTIAL PRERENDERING
 
 [read more](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
+
+### FORM DATA OBJECT
+
+[dev mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+
+### NEXTJS 15 CACHING
+
+[nextjs docs](https://nextjs.org/docs/app/deep-dive/caching)
+
+### NEXTJS 15 SERVER ACTIONS SECURITY
+
+[nextjs docs](https://nextjs.org/blog/security-nextjs-server-components-actions)

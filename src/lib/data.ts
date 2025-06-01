@@ -9,6 +9,10 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 
+
+// ! This functions only works with a Postgres database.
+// * Mongodb or other databases will require a different approach.
+
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 export async function fetchRevenue() {
@@ -86,6 +90,9 @@ export async function fetchCardData() {
 }
 
 const ITEMS_PER_PAGE = 6;
+
+
+
 export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
