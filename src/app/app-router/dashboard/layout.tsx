@@ -1,5 +1,12 @@
 import SideNav from '@/components/ui/dashboard/sidenav';
 
+// ? PARTIAL PRERENDERING (PPR)
+// export const experimental_ppr = true;
+
+/* 
+As long as you're using Suspense to wrap the dynamic parts of your route, Next.js will know which parts of your route are static and which are dynamic.
+*/
+
 
 // * This is a server component
 // $ Static Rendering (SSR) is the default behavior in Next.js

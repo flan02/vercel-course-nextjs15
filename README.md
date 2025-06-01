@@ -23,3 +23,7 @@ This is the official nextjs 15 + react 19 course from Vercel in 2025
 ### Vercel marketplace
 
 [docs](https://vercel.com/marketplace/category/databases?category=databases)
+
+### PARTIAL PRERENDERING
+
+[read more](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
