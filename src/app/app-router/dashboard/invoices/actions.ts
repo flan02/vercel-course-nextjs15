@@ -19,16 +19,19 @@ export async function createInvoice(formData: FormData) {
   const amountInCents = amount * 100 // Assuming amount is in dollars, convert to cents for storage
   const date = new Date() // Format date as YYYY-MM-DD
 
-  const newInvoice = await db.invoice.create({
-    data: {
-      customerId,
-      amount: amountInCents,
-      status,
-      date
-    }
-  })
-
-  console.log(newInvoice);
+  try {
+    const newInvoice = await db.invoice.create({
+      data: {
+        customerId,
+        amount: amountInCents,
+        status,
+        date
+      }
+    })
+    //console.log(newInvoice);
+  } catch (error) {
+    console.log(error);
+  }
 
   revalidatePath('/app-router/dashboard/invoices'); // fresh data will be fetched from the server
   redirect('/app-router/dashboard/invoices'); // redirect to the invoices page
@@ -70,6 +73,8 @@ export async function updateInvoice(id: string, formData: FormData) {
 
 
 export async function deleteInvoice(id: string) {
+  // throw new Error('Failed to Delete Invoice'); // Code below is not reacheable
+
   try {
     await db.invoice.delete({
       where: { id },
@@ -80,7 +85,8 @@ export async function deleteInvoice(id: string) {
   }
 
   revalidatePath('/app-router/dashboard/invoices')
-  // Doesn't need redirect since this action is being called where the invoices are listed
+
+  // ? Doesn't need redirect since this action is being called where the invoices are listed
   // redirect('/app-router/dashboard/invoices')
 }
 

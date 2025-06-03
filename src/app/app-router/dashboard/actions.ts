@@ -239,6 +239,10 @@ export async function fetchCustomers(): Promise<CustomerField[]> {
 
 
 export async function fetchInvoiceById(id: string): Promise<InvoiceForm | null> {
+
+  if (id == null) {
+    return null
+  }
   try {
     const invoice = await db.invoice.findUnique({
       where: { id },
@@ -250,7 +254,8 @@ export async function fetchInvoiceById(id: string): Promise<InvoiceForm | null> 
       },
     });
 
-    if (!invoice) return null;
+
+    if (!invoice) return null
 
     const formattedInvoice: InvoiceForm = {
       ...invoice,
