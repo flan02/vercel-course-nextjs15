@@ -36,7 +36,7 @@ This is the official nextjs 15 + react 19 course from Vercel in 2025
 
 [nextjs docs](https://nextjs.org/docs/app/deep-dive/caching)
 
-###### Pages Router deprecated since Nextjs 15
+###### Pages Router deprecated since Nextjs 15.
 
 ### NEXTJS 15 SERVER ACTIONS SECURITY.
 
