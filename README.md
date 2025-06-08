@@ -38,6 +38,6 @@ This is the official nextjs 15 + react 19 course from Vercel in 2025
 
 ###### Pages Router deprecated since Nextjs 15.
 
-### NEXTJS 15 SERVER ACTIONS SECURITY.
+### NEXTJS 15 SERVER ACTIONS SECURITY DOCS
 
 [nextjs docs](https://nextjs.org/blog/security-nextjs-server-components-actions)
